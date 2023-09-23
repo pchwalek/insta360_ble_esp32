@@ -254,16 +254,16 @@ void powerOnPrevConnectedCameras() {
     manuf_data[18] = 0x38;
     manuf_data[19] = 0x52;
 
-    // BLEAdvertisementData advertisementData = new BLEAdvertisementData();
-    BLEAdvertisementData advertisementData;
-    advertisementData.setName("Insta360 GPS Remote");
-    advertisementData.setFlags(ESP_BLE_ADV_FLAG_GEN_DISC | ESP_BLE_ADV_FLAG_DMT_CONTROLLER_SPT | ESP_BLE_ADV_FLAG_DMT_HOST_SPT);
-    advertisementData.setManufacturerData((char *) manuf_data);
+    // BLEAdvertisementData advertisementData;
+    // advertisementData.setName("Insta360 GPS Remote");
+    // advertisementData.setFlags(ESP_BLE_ADV_FLAG_GEN_DISC | ESP_BLE_ADV_FLAG_DMT_CONTROLLER_SPT | ESP_BLE_ADV_FLAG_DMT_HOST_SPT);
+    // advertisementData.setManufacturerData((char *) manuf_data);
 
-    BLEAdvertising* advertisement = new BLEAdvertising();
-    advertisement->setAdvertisementData(advertisementData);
-	  advertisement->start();
+    // BLEAdvertising* advertisement = new BLEAdvertising();
+    // advertisement->setAdvertisementData(advertisementData);
+	  // advertisement->start();
 
+    // custom function that adds manufacturing data and modifies flags of advertisement
     BLEDevice::startAdvertisingWithManufData(manuf_data);
 }
 
